@@ -1,0 +1,11 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<resources>
+  <color name="primaryColorHufflepuff">#ffdb00</color>
+  <color name="primaryLightColorHufflepuff">#ffff53</color>
+  <color name="primaryDarkColorHufflepuff">#c7aa00</color>
+  <color name="secondaryColorHufflepuff">#60605c</color>
+  <color name="secondaryLightColorHufflepuff">#8d8d89</color>
+  <color name="secondaryDarkColorHufflepuff">#363633</color>
+  <color name="primaryTextColorHufflepuff">#000000</color>
+  <color name="secondaryTextColorHufflepuff">#ffffff</color>
+</resources>

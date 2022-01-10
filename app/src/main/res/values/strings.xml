@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">WickedWizardingWorld</string>
+
+<!--    HouseChoiceActivity-->
+    <string name="name_hint"> &gt;&gt;enter your name&lt;&lt; </string>
+    <string name="toast_empty">Please enter your name</string>
+    <string name="toast_name_approved">Welcome to the Wicked Wizarding World</string>
+    <string name="griffindor">GRIFFINDOOOR!!!</string>
+    <string name="slytherin">SLYTHERIIIN!!!</string>
+    <string name="hufflepuff">HUFFLEPUUUFF!!!</string>
+    <string name="ravenclaw">RAVENCLAAAW!!!</string>
+
+<!--    HogwardsActivity-->
+    <string name="duelling_headline">Duel</string>
+    <string name="exit_text">If you want to leave Wicked Wizarding World just press back again.</string>
+    <string name="spells_learned">Spells learned:</string>
+    <string name="wands">Wands earned:</string>
+
+<!--    SettingsActivity-->
+    <string name="settings_headline">Settings</string>
+    <string name="switch_vibration_permissions">Vibration permissions</string>
+
+<!--    DuelActivity-->
+    <string name="enemy_life">Enemy life: </string>
+    <string name="player_life">Your life: </string>
+</resources>

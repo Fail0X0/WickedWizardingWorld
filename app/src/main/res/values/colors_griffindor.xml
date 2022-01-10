@@ -1,0 +1,11 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<resources>
+  <color name="primaryColorGriffindor">#ffc500</color>
+  <color name="primaryLightColorGriffindor">#fff84f</color>
+  <color name="primaryDarkColorGriffindor">#c79500</color>
+  <color name="secondaryColorGriffindor">#d10d0d</color>
+  <color name="secondaryLightColorGriffindor">#ff5339</color>
+  <color name="secondaryDarkColorGriffindor">#970000</color>
+  <color name="primaryTextColorGriffindor">#000000</color>
+  <color name="secondaryTextColorGriffindor">#ffffff</color>
+</resources>

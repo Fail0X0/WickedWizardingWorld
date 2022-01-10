@@ -1,0 +1,11 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<resources>
+  <color name="primaryColorSlytherin">#089113</color>
+  <color name="primaryLightColorSlytherin">#52c347</color>
+  <color name="primaryDarkColorSlytherin">#006200</color>
+  <color name="secondaryColorSlytherin">#dddddd</color>
+  <color name="secondaryLightColorSlytherin">#ffffff</color>
+  <color name="secondaryDarkColorSlytherin">#ababab</color>
+  <color name="primaryTextColorSlytherin">#000000</color>
+  <color name="secondaryTextColorSlytherin">#000000</color>
+</resources>

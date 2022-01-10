@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <Switch
+        android:id="@+id/switch_vibration"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintHeight_percent="0.05"
+        android:text="@string/switch_vibration_permissions"
+        app:autoSizeMinTextSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/settings_headline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintWidth_percent="1"
+        android:text="@string/settings_headline"
+        app:autoSizeMinTextSize="20dp"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <ImageView
+        android:id="@+id/image_settings_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="-1dp"
+        android:transitionName="start_duel"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintWidth_percent="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/corridor2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

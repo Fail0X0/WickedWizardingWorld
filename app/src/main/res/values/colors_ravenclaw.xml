@@ -1,0 +1,11 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<resources>
+  <color name="primaryColorRavenclaw">#000ac6</color>
+  <color name="primaryLightColorRavenclaw">#613efa</color>
+  <color name="primaryDarkColorRavenclaw">#000094</color>
+  <color name="secondaryColorRavenclaw">#dddddd</color>
+  <color name="secondaryLightColorRavenclaw">#ffffff</color>
+  <color name="secondaryDarkColorRavenclaw">#ababab</color>
+  <color name="primaryTextColorRavenclaw">#ffffff</color>
+  <color name="secondaryTextColorRavenclaw">#000000</color>
+</resources>
