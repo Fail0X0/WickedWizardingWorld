@@ -2,6 +2,7 @@ package com.fail_x.wickedwizardingworld;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,15 +16,26 @@ public class HogwartsActivity extends AppCompatActivity {
     private static final boolean D = true;
     private static final String TAG = HogwartsActivity.class.getName();
 
+    /*For exiting purposes*/
     private enum Exit {
         none,
         asked,
         end
     }
 
+    final Player User = new Player().getInstancePlayer();
     private Exit exit;
     private TextView blur;
     private TextView exit_text;
+
+    /*Saved players attributes*/
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String SPELLS = "player_spells";
+    public static final String WANDS = "player_wands";
+    public static final String HOUSE = "player_house";
+    public static final String LIFE = "player_life";
+    public static final String MANA = "player_mana";
+
 
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     @Override
@@ -31,7 +43,6 @@ public class HogwartsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hogwarts);
 
-        final Player User = new Player().getInstancePlayer();
         ImageView duel_activity_button = findViewById(R.id.duel_activity_button);
         ImageView settings_activity_button = findViewById(R.id.settings_activity_button);
         ImageView user_house = findViewById(R.id.user_house);
@@ -149,5 +160,15 @@ public class HogwartsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         exit = Exit.none;
+    }
+    public void SaveData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(HOUSE, User.getHouse().ordinal());
+        editor.putFloat(LIFE, User.getLife());
+        editor.putInt(MANA, User.getMana());
+//        editor.putStringSet(SPELLS, User.getSpell_list());
+        editor.putInt(MANA, User.getMana());
+        editor.apply();
     }
 }

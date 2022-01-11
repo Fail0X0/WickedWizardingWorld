@@ -67,7 +67,7 @@ public class Player extends Dueller {
         return User;
     }
 
-    public String[] getSpellNamesforDisplay() {         //IS THIS STILL NEEDE? LOOK UP SPELLFACTORYS getSpellNames()
+    public String[] getSpellNamesforDisplay() {         //to get all spells as String the Player inherits
         String[] name_list = new String[getInstancePlayer().getSpell_list().size()];
 
         for (int i = 0; i < getInstancePlayer().getSpell_list().size(); i++) {
