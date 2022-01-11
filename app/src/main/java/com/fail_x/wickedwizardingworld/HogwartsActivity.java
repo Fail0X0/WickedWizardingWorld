@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 
+import java.util.Enumeration;
+
 public class HogwartsActivity extends AppCompatActivity {
     private static final boolean D = true;
     private static final String TAG = HogwartsActivity.class.getName();
@@ -161,14 +163,24 @@ public class HogwartsActivity extends AppCompatActivity {
         super.onResume();
         exit = Exit.none;
     }
+
     public void SaveData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(HOUSE, User.getHouse().ordinal());
         editor.putFloat(LIFE, User.getLife());
         editor.putInt(MANA, User.getMana());
+                                //CANNOT SAVE LISTS OR OBJECTS! GSON LIBRARY NOT WORKING!
 //        editor.putStringSet(SPELLS, User.getSpell_list());
-        editor.putInt(MANA, User.getMana());
+//        editor.putInt(WANDS, User.getWand_list());
         editor.apply();
+    }
+
+    public void LoadData() {
+                                //CANNOT CAST INTO ENUM!
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        int house = sharedPreferences.getInt(HOUSE, 0);
+        int life = sharedPreferences.getInt(LIFE, 0);
+        int mana = sharedPreferences.getInt(MANA, 0);
     }
 }

@@ -137,7 +137,7 @@ public class Dueller {
         monster
     }
 
-    public enum EnemyTag {
+    enum EnemyTag {
         troll,
         acromantula,
         goyle,
