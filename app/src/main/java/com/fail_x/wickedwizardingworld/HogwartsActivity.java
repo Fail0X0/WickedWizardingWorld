@@ -50,11 +50,14 @@ public class HogwartsActivity extends AppCompatActivity {
         ImageView user_house = findViewById(R.id.user_house);
         final ImageView maze_image = findViewById(R.id.maze_image);
         final ImageView settings_activity_start = findViewById(R.id.settings_activity_start);
+        final ImageView test = findViewById(R.id.test);
         TextView user_name = findViewById(R.id.user_name);
         TextView user_spells = findViewById(R.id.user_spells);
         TextView user_wands = findViewById(R.id.user_wands);
         blur = findViewById(R.id.blur);
         exit_text = findViewById(R.id.exit_text);
+
+        test.setImageResource(User.getWand_list().get(0).getPicture_path());
 
         /*Initiate user interface*/
         user_name.setText(User.getName());
@@ -70,43 +73,22 @@ public class HogwartsActivity extends AppCompatActivity {
             user_house.setImageResource(R.drawable.hufflepuff_icon);
         }
 
-        duel_activity_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenDuelActivity();
-            }
+        duel_activity_button.setOnClickListener(v -> OpenDuelActivity());
+
+        settings_activity_button.setOnClickListener(v -> OpenSettingsActivity());
+
+        settings_activity_start.setOnClickListener(v -> OpenImageActivity(settings_activity_start));
+
+        blur.setOnClickListener(v -> {
+            blur.setVisibility(View.GONE);
+            exit_text.setVisibility(View.GONE);
+            exit = Exit.end;
         });
 
-        settings_activity_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenSettingsActivity();
-            }
-        });
-
-        settings_activity_start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenImageActivity(settings_activity_start);
-            }
-        });
-
-        blur.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                blur.setVisibility(View.GONE);
-                exit_text.setVisibility(View.GONE);
-                exit = Exit.end;
-            }
-        });
-
-        exit_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                blur.setVisibility(View.GONE);
-                exit_text.setVisibility(View.GONE);
-                exit = Exit.end;
-            }
+        exit_text.setOnClickListener(v -> {
+            blur.setVisibility(View.GONE);
+            exit_text.setVisibility(View.GONE);
+            exit = Exit.end;
         });
     }
 

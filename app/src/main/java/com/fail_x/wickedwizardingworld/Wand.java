@@ -1,13 +1,12 @@
 package com.fail_x.wickedwizardingworld;
 
-import android.graphics.drawable.Drawable;
 
-public class Wand{
+public class Wand {
 
-    public Wand(String name, WandTag tag, Drawable wanddrawable) {
+    public Wand(String name, WandTag tag, int picture_path) {
         this.name = name;
         this.tag = tag;
-        this.wanddrawable = wanddrawable;
+        this.picture_path = picture_path;
     }
 
     public Wand(String name, WandTag tag) {
@@ -17,7 +16,11 @@ public class Wand{
 
     private String name;
     private WandTag tag;
-    private Drawable wanddrawable;
+    private int picture_path;
+
+    public int getPicture_path() {
+        return picture_path;
+    }
 
     public WandTag getTag() {
         return tag;
@@ -27,9 +30,6 @@ public class Wand{
         return name;
     }
 
-    public Drawable getWanddrawable() {
-        return wanddrawable;
-    }
 
     public enum WandTag {
         cherry,
