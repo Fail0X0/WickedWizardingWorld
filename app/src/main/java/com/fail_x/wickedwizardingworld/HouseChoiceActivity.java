@@ -38,9 +38,27 @@ public class HouseChoiceActivity extends AppCompatActivity {
 
         MyAnimations ani = new MyAnimations();              //To reveal the houses
 
-        person_name.setOnEditorActionListener(new EditText.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        person_name.setOnEditorActionListener((v, actionId, event) -> {
+            hideKeyboard(v);
+            if (person_name.getText().toString().isEmpty()) {
+                Toast.makeText(getApplicationContext(), getString(R.string.toast_empty), Toast.LENGTH_SHORT).show();
+            } else {
+                User.setName(person_name.getText().toString());
+
+                Toast.makeText(getApplicationContext(), getString(R.string.toast_name_approved) + " " + person_name.getText(), Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "The Persons name is: " + person_name.getText().toString());
+
+                ani.ZoomAnimation(griffindor);
+                ani.ZoomAnimation(slytherin);
+                ani.ZoomAnimation(hufflepuff);
+                ani.ZoomAnimation(ravenclaw);
+
+            }
+            return false;
+        });
+
+        person_name.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
                 hideKeyboard(v);
                 if (person_name.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), getString(R.string.toast_empty), Toast.LENGTH_SHORT).show();
@@ -54,69 +72,33 @@ public class HouseChoiceActivity extends AppCompatActivity {
                     ani.ZoomAnimation(slytherin);
                     ani.ZoomAnimation(hufflepuff);
                     ani.ZoomAnimation(ravenclaw);
-
-                }
-                return false;
-            }
-        });
-
-        person_name.setOnFocusChangeListener(new EditText.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    hideKeyboard(v);
-                    if (person_name.getText().toString().isEmpty()) {
-                        Toast.makeText(getApplicationContext(), getString(R.string.toast_empty), Toast.LENGTH_SHORT).show();
-                    } else {
-                        User.setName(person_name.getText().toString());
-
-                        Toast.makeText(getApplicationContext(), getString(R.string.toast_name_approved) + " " + person_name.getText(), Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "The Persons name is: " + person_name.getText().toString());
-
-                        ani.ZoomAnimation(griffindor);
-                        ani.ZoomAnimation(slytherin);
-                        ani.ZoomAnimation(hufflepuff);
-                        ani.ZoomAnimation(ravenclaw);
-                    }
                 }
             }
         });
 
-        griffindor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                User.setHouse(Dueller.House.griffindor);
-                ani.PressedAnimation(griffindor);
-                Toast.makeText(getApplicationContext(), getString(R.string.griffindor), Toast.LENGTH_SHORT).show();
-                OpenHogwartsActivity(sorting_hat);
-            }
+        griffindor.setOnClickListener(v -> {
+            User.setHouse(Enemy.House.griffindor);
+            ani.PressedAnimation(griffindor);
+            Toast.makeText(getApplicationContext(), getString(R.string.griffindor), Toast.LENGTH_SHORT).show();
+            OpenHogwartsActivity(sorting_hat);
         });
-        slytherin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                User.setHouse(Dueller.House.slytherin);
-                ani.PressedAnimation(slytherin);
-                Toast.makeText(getApplicationContext(), getString(R.string.slytherin), Toast.LENGTH_SHORT).show();
-                OpenHogwartsActivity(sorting_hat);
-            }
+        slytherin.setOnClickListener(v -> {
+            User.setHouse(Enemy.House.slytherin);
+            ani.PressedAnimation(slytherin);
+            Toast.makeText(getApplicationContext(), getString(R.string.slytherin), Toast.LENGTH_SHORT).show();
+            OpenHogwartsActivity(sorting_hat);
         });
-        hufflepuff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                User.setHouse(Dueller.House.hufflepuff);
-                ani.PressedAnimation(hufflepuff);
-                Toast.makeText(getApplicationContext(), getString(R.string.hufflepuff), Toast.LENGTH_SHORT).show();
-                OpenHogwartsActivity(sorting_hat);
-            }
+        hufflepuff.setOnClickListener(v -> {
+            User.setHouse(Enemy.House.hufflepuff);
+            ani.PressedAnimation(hufflepuff);
+            Toast.makeText(getApplicationContext(), getString(R.string.hufflepuff), Toast.LENGTH_SHORT).show();
+            OpenHogwartsActivity(sorting_hat);
         });
-        ravenclaw.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                User.setHouse(Dueller.House.ravenclaw);
-                ani.PressedAnimation(ravenclaw);
-                Toast.makeText(getApplicationContext(), getString(R.string.ravenclaw), Toast.LENGTH_SHORT).show();
-                OpenHogwartsActivity(sorting_hat);
-            }
+        ravenclaw.setOnClickListener(v -> {
+            User.setHouse(Enemy.House.ravenclaw);
+            ani.PressedAnimation(ravenclaw);
+            Toast.makeText(getApplicationContext(), getString(R.string.ravenclaw), Toast.LENGTH_SHORT).show();
+            OpenHogwartsActivity(sorting_hat);
         });
     }
 

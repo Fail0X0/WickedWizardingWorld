@@ -5,30 +5,30 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dueller {
+public class Enemy {
     private static final boolean D = true;
-    private static final String TAG = Dueller.class.getName();
+    private static final String TAG = Enemy.class.getName();
 
-    public Dueller(String name, House house) {
+    public Enemy(String name, House house) {
         this.name = name;
-        Dueller.house = house;
+        Enemy.house = house;
         this.mana = 10;
         this.damage = 0.01f;
         this.life = 1;
         this.spell_list = new ArrayList<>();  //don't forget to fill the empty list
     }
 
-    public Dueller(String name, EnemyTag enemy_tag, int mana, float damage, float life, House house) {
+    public Enemy(String name, EnemyTag enemy_tag, int mana, float damage, float life, House house) {
         this.name = name;
-        this.enemy_tag = enemy_tag;
+        Enemy.enemy_tag = enemy_tag;
         this.mana = mana;
         this.damage = damage;
         this.life = life;
-        Dueller.house = house;
+        Enemy.house = house;
         this.spell_list = new ArrayList<>();  //don't forget to fill the empty list
     }
 
-    public Dueller() {
+    public Enemy() {
     }
 
     public int getMana() {
@@ -68,7 +68,7 @@ public class Dueller {
     }
 
     public void setHouse(House house) {
-        Dueller.house = house;
+        Enemy.house = house;
     }
 
     public List<Spell> getSpell_list() {
@@ -117,7 +117,7 @@ public class Dueller {
     }
 
     public void setEnemy_name(EnemyTag enemy_name) {
-        this.enemy_tag = enemy_name;
+        Enemy.enemy_tag = enemy_name;
     }
 
     private int mana;

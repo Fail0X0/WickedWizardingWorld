@@ -12,8 +12,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
 
-import java.util.Enumeration;
-
 public class HogwartsActivity extends AppCompatActivity {
     private static final boolean D = true;
     private static final String TAG = HogwartsActivity.class.getName();
@@ -63,13 +61,13 @@ public class HogwartsActivity extends AppCompatActivity {
         user_name.setText(User.getName());
         user_spells.setText(getText(R.string.spells_learned) + " " + User.getSpell_list().size());
         user_wands.setText(getString(R.string.wands) + " " + User.getWand_list().size());
-        if (User.getHouse().equals(Dueller.House.griffindor)) {
+        if (User.getHouse().equals(Enemy.House.griffindor)) {
             user_house.setImageResource(R.drawable.griffindor_icon);
-        } else if (User.getHouse().equals(Dueller.House.slytherin)) {
+        } else if (User.getHouse().equals(Enemy.House.slytherin)) {
             user_house.setImageResource(R.drawable.slytherin_icon);
-        } else if (User.getHouse().equals(Dueller.House.ravenclaw)) {
+        } else if (User.getHouse().equals(Enemy.House.ravenclaw)) {
             user_house.setImageResource(R.drawable.ravenclaw_icon);
-        } else if (User.getHouse().equals(Dueller.House.hufflepuff)) {
+        } else if (User.getHouse().equals(Enemy.House.hufflepuff)) {
             user_house.setImageResource(R.drawable.hufflepuff_icon);
         }
 

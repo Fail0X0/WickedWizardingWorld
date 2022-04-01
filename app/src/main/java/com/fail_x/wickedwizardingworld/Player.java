@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player extends Dueller {
+public class Player extends Enemy {
     private static final boolean D = true;
     private static final String TAG = Player.class.getName();
 
@@ -13,8 +13,8 @@ public class Player extends Dueller {
         this.setName("");
         this.setMana(10);
         this.setDamage((float) 0.01);
-        this.setFight_spell_list(new ArrayList<Spell>());
-        this.setSpell_list(new ArrayList<Spell>());
+        this.setFight_spell_list(new ArrayList<>());
+        this.setSpell_list(new ArrayList<>());
     }
 
     protected static Player User = new Player();

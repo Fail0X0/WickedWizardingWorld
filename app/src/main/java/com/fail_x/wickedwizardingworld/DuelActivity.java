@@ -22,7 +22,7 @@ public class DuelActivity extends AppCompatActivity {
     private static final String TAG = DuelActivity.class.getName();
 
     private Player User = new Player().getInstancePlayer();
-    private Dueller Enemy = new EnemyFactory().getEnemy(Dueller.EnemyTag.goyle);
+    private com.fail_x.wickedwizardingworld.Enemy Enemy = new EnemyFactory().getEnemy(com.fail_x.wickedwizardingworld.Enemy.EnemyTag.goyle);
 
     private float balance_guideline = (float) 0.5;
 
@@ -46,20 +46,16 @@ public class DuelActivity extends AppCompatActivity {
         enemy_life_text.setText(getText(R.string.enemy_life).toString() + (int) (Enemy.getLife() * 100) + "%");
         player_life_text.setText(getText(R.string.player_life).toString() + (int) (User.getLife() * 100) + "%");
 
-        spell_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (spell_listview.getItemAtPosition(position) == spells.getItem(0)) {
-                    damage_to_enemy(duel_line, guideline, lifebar_enemy, enemy_life_text, position);
-                } else if (spell_listview.getItemAtPosition(position) == spells.getItem(1)) {
-                    damage_to_enemy(duel_line, guideline, lifebar_enemy, enemy_life_text,position);
-                } else if (spell_listview.getItemAtPosition(position) == spells.getItem(2)) {
-                    damage_to_player(duel_line, guideline, lifebar_player, player_life_text,position);
-                } else if (spell_listview.getItemAtPosition(position) == spells.getItem(3)) {
-                    damage_to_player(duel_line, guideline, lifebar_player, player_life_text,position);
-                }
+        spell_listview.setOnItemClickListener((parent, view, position, id) -> {
+            if (spell_listview.getItemAtPosition(position) == spells.getItem(0)) {
+                damage_to_enemy(duel_line, guideline, lifebar_enemy, enemy_life_text, position);
+            } else if (spell_listview.getItemAtPosition(position) == spells.getItem(1)) {
+                damage_to_enemy(duel_line, guideline, lifebar_enemy, enemy_life_text,position);
+            } else if (spell_listview.getItemAtPosition(position) == spells.getItem(2)) {
+                damage_to_player(duel_line, guideline, lifebar_player, player_life_text,position);
+            } else if (spell_listview.getItemAtPosition(position) == spells.getItem(3)) {
+                damage_to_player(duel_line, guideline, lifebar_player, player_life_text,position);
             }
-
         });
 
     }

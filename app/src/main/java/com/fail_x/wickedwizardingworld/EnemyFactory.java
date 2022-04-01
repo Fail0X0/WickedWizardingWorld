@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EnemyFactory extends Dueller{
+public class EnemyFactory extends Enemy {
     private static final boolean D = true;
     private static final String TAG = EnemyFactory.class.getName();
 
@@ -13,17 +13,17 @@ public class EnemyFactory extends Dueller{
         CreateEnemys();
     }
 
-    public List<Dueller> getEnemy_list() {
+    public List<Enemy> getEnemy_list() {
         return enemy_list;
     }
 
-    public void setEnemy_list(List<Dueller> enemy_list) {
+    public void setEnemy_list(List<Enemy> enemy_list) {
         this.enemy_list = enemy_list;
     }
 
-    List<Dueller> enemy_list = new ArrayList<>();
+    List<Enemy> enemy_list = new ArrayList<>();
 
-    public Dueller getEnemy(EnemyTag enemy_name) {
+    public Enemy getEnemy(EnemyTag enemy_name) {
         int i;
         boolean found = false;
 
@@ -42,9 +42,9 @@ public class EnemyFactory extends Dueller{
     }
 
     private void CreateEnemys(){
-        enemy_list.add(new Dueller("Troll", EnemyTag.troll,1, 0.01f,  1.5f, House.monster));
-        enemy_list.add(new Dueller("Acromantula", EnemyTag.acromantula,2, 0.01f,1, House.monster));
-        enemy_list.add(new Dueller("Goyle", EnemyTag.goyle,6,  0.01f,1, House.slytherin));
+        enemy_list.add(new Enemy("Troll", EnemyTag.troll,1, 0.01f,  1.5f, House.monster));
+        enemy_list.add(new Enemy("Acromantula", EnemyTag.acromantula,2, 0.01f,1, House.monster));
+        enemy_list.add(new Enemy("Goyle", EnemyTag.goyle,6,  0.01f,1, House.slytherin));
 
     }
 
