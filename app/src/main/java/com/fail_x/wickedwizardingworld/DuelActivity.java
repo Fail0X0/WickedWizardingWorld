@@ -38,25 +38,12 @@ public class DuelActivity extends AppCompatActivity {
         final TextView player_life_text = findViewById(R.id.player_life_text);
         final TextView enemy_life_text = findViewById(R.id.enemy_life_text);
         final Guideline guideline = findViewById(R.id.guideline);
-        final ListView spell_listview = findViewById(R.id.spell_listview);
 
-        final ArrayAdapter<String> spells = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, User.getSpellNamesforDisplay());
-        spell_listview.setAdapter(spells);
+
 
         enemy_life_text.setText(getText(R.string.enemy_life).toString() + (int) (Enemy.getLife() * 100) + "%");
         player_life_text.setText(getText(R.string.player_life).toString() + (int) (User.getLife() * 100) + "%");
 
-        spell_listview.setOnItemClickListener((parent, view, position, id) -> {
-            if (spell_listview.getItemAtPosition(position) == spells.getItem(0)) {
-                damage_to_enemy(duel_line, guideline, lifebar_enemy, enemy_life_text, position);
-            } else if (spell_listview.getItemAtPosition(position) == spells.getItem(1)) {
-                damage_to_enemy(duel_line, guideline, lifebar_enemy, enemy_life_text,position);
-            } else if (spell_listview.getItemAtPosition(position) == spells.getItem(2)) {
-                damage_to_player(duel_line, guideline, lifebar_player, player_life_text,position);
-            } else if (spell_listview.getItemAtPosition(position) == spells.getItem(3)) {
-                damage_to_player(duel_line, guideline, lifebar_player, player_life_text,position);
-            }
-        });
 
     }
 
