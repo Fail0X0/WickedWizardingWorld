@@ -38,15 +38,15 @@ public class HogwartsActivity extends AppCompatActivity {
         ImageView settings_activity_button = findViewById(R.id.settings_activity_button);
         ImageView user_house = findViewById(R.id.user_house);
         final ImageView maze_image = findViewById(R.id.maze_image);
-        final ImageView settings_activity_start = findViewById(R.id.settings_activity_start);
-        final ImageView test = findViewById(R.id.test);
+        final ImageView settings_activity_start = findViewById(R.id.settings_activity_button);
         TextView user_name = findViewById(R.id.user_name);
         TextView user_spells = findViewById(R.id.user_spells);
         TextView user_wands = findViewById(R.id.user_wands);
         blur = findViewById(R.id.blur);
         exit_text = findViewById(R.id.exit_text);
 
-        test.setImageResource(User.getWand_list().get(0).getPicture_path());
+        /*Get picture out of path. Replace XXX with Imageview name*/
+        //XXX.setImageResource(User.getWand_list().get(0).getPicture_path());
 
         //Initiate user interface
         user_name.setText(User.getName());
