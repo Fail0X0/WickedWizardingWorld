@@ -10,22 +10,22 @@ public class Enemy extends Character{
     private static final String TAG = Enemy.class.getName();
 
     public Enemy(String name, House house) {
-        this.name = name;
-        Enemy.house = house;
-        this.mana = 10;
-        this.damage = 0.01f;
-        this.life = 1;
-        this.spell_list = new ArrayList<>();  //don't forget to fill the empty list
+        this.setName(name);
+        this.setHouse(house);
+        this.setMana(10);
+        this.setDamage(0.01f);
+        this.setLife(1);
+        this.setSpell_list(new ArrayList<>());  //don't forget to fill the empty list
     }
 
     public Enemy(String name, EnemyTag enemy_tag, int mana, float damage, float life, House house) {
-        this.name = name;
+        this.setName(name);
         Enemy.enemy_tag = enemy_tag;
-        this.mana = mana;
-        this.damage = damage;
-        this.life = life;
-        Enemy.house = house;
-        this.spell_list = new ArrayList<>();  //don't forget to fill the empty list
+        this.setMana(mana);
+        this.setDamage(damage);
+        this.setLife(life);
+        this.setHouse(house);
+        this.setSpell_list(new ArrayList<>());  //don't forget to fill the empty list
     }
 
     public Enemy() {
@@ -39,22 +39,8 @@ public class Enemy extends Character{
         Enemy.enemy_tag = enemy_name;
     }
 
-    private int mana;
-    private float damage;
-    private float life;
-    private String name;
-    private static House house;
+
     private static EnemyTag enemy_tag;
-    private List<Spell> spell_list;
-
-
-    enum House {
-        griffindor,
-        hufflepuff,
-        ravenclaw,
-        slytherin,
-        monster
-    }
 
     enum EnemyTag {
         troll,

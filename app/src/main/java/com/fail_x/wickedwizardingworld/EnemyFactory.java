@@ -36,19 +36,19 @@ public class EnemyFactory extends Enemy {
         if (found)
             return enemy_list.get(i);
         else {
-            if(D) Log.e(TAG, "Spell could not be found in list. Check writing. getSpell returned NULL!");
+            if (D)
+                Log.e(TAG, "Spell could not be found in list. Check writing. getSpell returned NULL!");
             return null;
         }
     }
 
-    private void CreateEnemys(){
-        enemy_list.add(new Enemy("Troll", EnemyTag.troll,1, 0.01f,  1.5f, House.monster));
-        enemy_list.add(new Enemy("Acromantula", EnemyTag.acromantula,2, 0.01f,1, House.monster));
-        enemy_list.add(new Enemy("Goyle", EnemyTag.goyle,6,  0.01f,1, House.slytherin));
-
+    private void CreateEnemys() {
+        enemy_list.add(new Enemy("Troll", EnemyTag.troll, 1, 0.01f, 1.5f, House.monster));
+        enemy_list.add(new Enemy("Acromantula", EnemyTag.acromantula, 2, 0.01f, 1, House.monster));
+        enemy_list.add(new Enemy("Goyle", EnemyTag.goyle, 6, 0.01f, 1, House.slytherin));
     }
 
-    private void AddSpells(){
+    private void AddSpells() {
         //Initiate Spells of Troll
         getEnemy(EnemyTag.troll).setSpell(getSpell(Spell.SpellTag.club));
     }

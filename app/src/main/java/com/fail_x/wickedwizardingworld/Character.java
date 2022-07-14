@@ -11,7 +11,7 @@ public abstract class Character {
 
     public Character(String name, House house) {
         this.name = name;
-        Character.house = house;
+        this.house = house;
         this.mana = 10;
         this.damage = 0.01f;
         this.life = 1;
@@ -23,7 +23,7 @@ public abstract class Character {
         this.mana = mana;
         this.damage = damage;
         this.life = life;
-        Character.house = house;
+        this.house = house;
         this.spell_list = new ArrayList<>();  //don't forget to fill the empty list
     }
 
