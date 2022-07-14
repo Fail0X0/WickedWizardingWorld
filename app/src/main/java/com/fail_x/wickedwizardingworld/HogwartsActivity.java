@@ -2,7 +2,6 @@ package com.fail_x.wickedwizardingworld;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,12 +10,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
-
+//This class is the main menu of the game and main return point for overview
 public class HogwartsActivity extends AppCompatActivity {
     private static final boolean D = true;
     private static final String TAG = HogwartsActivity.class.getName();
 
-    /*For exiting purposes*/
+    //For keeping track of the user exiting the game
     private enum Exit {
         none,
         asked,
@@ -27,14 +26,6 @@ public class HogwartsActivity extends AppCompatActivity {
     private Exit exit;
     private TextView blur;
     private TextView exit_text;
-
-    /*Saved players attributes*/
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String SPELLS = "player_spells";
-    public static final String WANDS = "player_wands";
-    public static final String HOUSE = "player_house";
-    public static final String LIFE = "player_life";
-    public static final String MANA = "player_mana";
 
 
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
@@ -57,17 +48,17 @@ public class HogwartsActivity extends AppCompatActivity {
 
         test.setImageResource(User.getWand_list().get(0).getPicture_path());
 
-        /*Initiate user interface*/
+        //Initiate user interface
         user_name.setText(User.getName());
         user_spells.setText(getText(R.string.spells_learned) + " " + User.getSpell_list().size());
         user_wands.setText(getString(R.string.wands) + " " + User.getWand_list().size());
-        if (User.getHouse().equals(Enemy.House.griffindor)) {
+        if (User.getHouse().equals(Character.House.griffindor)) {
             user_house.setImageResource(R.drawable.griffindor_icon);
-        } else if (User.getHouse().equals(Enemy.House.slytherin)) {
+        } else if (User.getHouse().equals(Character.House.slytherin)) {
             user_house.setImageResource(R.drawable.slytherin_icon);
-        } else if (User.getHouse().equals(Enemy.House.ravenclaw)) {
+        } else if (User.getHouse().equals(Character.House.ravenclaw)) {
             user_house.setImageResource(R.drawable.ravenclaw_icon);
-        } else if (User.getHouse().equals(Enemy.House.hufflepuff)) {
+        } else if (User.getHouse().equals(Character.House.hufflepuff)) {
             user_house.setImageResource(R.drawable.hufflepuff_icon);
         }
 
@@ -142,25 +133,5 @@ public class HogwartsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         exit = Exit.none;
-    }
-
-    public void SaveData() {
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(HOUSE, User.getHouse().ordinal());
-        editor.putFloat(LIFE, User.getLife());
-        editor.putInt(MANA, User.getMana());
-                                //CANNOT SAVE LISTS OR OBJECTS! GSON LIBRARY NOT WORKING!
-//        editor.putStringSet(SPELLS, User.getSpell_list());
-//        editor.putInt(WANDS, User.getWand_list());
-        editor.apply();
-    }
-
-    public void LoadData() {
-                                //CANNOT CAST INTO ENUM!
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        int house = sharedPreferences.getInt(HOUSE, 0);
-        int life = sharedPreferences.getInt(LIFE, 0);
-        int mana = sharedPreferences.getInt(MANA, 0);
     }
 }

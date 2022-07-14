@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//This class ia an abstract to creates all Characters like the Player or Enemies and maybe future classes like Friends
 public abstract class Character {
     private static final boolean D = true;
     private static final String TAG = Character.class.getName();
@@ -124,6 +124,7 @@ public abstract class Character {
         hufflepuff,
         ravenclaw,
         slytherin,
-        monster
+        monster,
+        unknown
     }
 }

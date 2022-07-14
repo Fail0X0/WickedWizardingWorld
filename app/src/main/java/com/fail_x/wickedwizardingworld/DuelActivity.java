@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.Guideline;
-
+//This is the main fight class for the game against users or NPC's
 public class DuelActivity extends AppCompatActivity {
     private static final boolean D = true;
     private static final String TAG = DuelActivity.class.getName();

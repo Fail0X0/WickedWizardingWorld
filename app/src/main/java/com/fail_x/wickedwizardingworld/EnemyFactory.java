@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Factory to supply different Enemy types for fighting
 public class EnemyFactory extends Enemy {
     private static final boolean D = true;
     private static final String TAG = EnemyFactory.class.getName();

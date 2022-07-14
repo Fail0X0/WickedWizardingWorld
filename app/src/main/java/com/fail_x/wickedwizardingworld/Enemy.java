@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Class for shaping Enemy attributes to fight
 public class Enemy extends Character{
     private static final boolean D = true;
     private static final String TAG = Enemy.class.getName();

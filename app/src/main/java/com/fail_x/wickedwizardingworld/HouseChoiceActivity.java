@@ -12,7 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+//Initial class when entering the game to chose the house one time.
+//After that class will not be called again
 public class HouseChoiceActivity extends AppCompatActivity {
     private static final boolean D = true;
     private static final String TAG = HouseChoiceActivity.class.getName();
@@ -23,12 +24,19 @@ public class HouseChoiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_house_choice);
 
         final Player User = new Player().getInstancePlayer();                       //create a new User (Singleton)
+        //Initialize layout
         final EditText person_name = findViewById(R.id.person_name);
         final ImageView sorting_hat = findViewById(R.id.sorting_hat);
         ImageView griffindor = findViewById(R.id.griffindor);
         ImageView slytherin = findViewById(R.id.slytherin);
         ImageView hufflepuff = findViewById(R.id.hufflepuff);
         ImageView ravenclaw = findViewById(R.id.ravenclaw);
+
+        //check if the game is initialized
+        if (!User.getHouse().equals(Character.House.unknown))
+        {
+            OpenHogwartsActivity(sorting_hat);
+        }
 
         SpellFactory spell_factory = new SpellFactory();                        //Initiating factorys
         WandFactory wand_factory = new WandFactory();

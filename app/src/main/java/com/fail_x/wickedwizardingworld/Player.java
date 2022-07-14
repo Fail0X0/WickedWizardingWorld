@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//The User attributes who plays the game
 public class Player extends Character {
     private static final boolean D = true;
     private static final String TAG = Player.class.getName();
@@ -13,6 +13,7 @@ public class Player extends Character {
         this.setName("");
         this.setMana(10);
         this.setDamage((float) 0.01);
+        this.setHouse(House.unknown);
         this.setFight_spell_list(new ArrayList<>());
         this.setSpell_list(new ArrayList<>());
     }
