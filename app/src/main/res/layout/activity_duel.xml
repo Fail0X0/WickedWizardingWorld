@@ -13,11 +13,12 @@
         android:layout_height="match_parent"
         android:elevation="-10dp"
         android:scaleType="fitXY"
+        android:transitionName="start_duel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background_icon" />
+        app:srcCompat="@drawable/hogwarts" />
 
     <ImageView
         android:id="@+id/header_frame"

@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/maze_image"
+        android:id="@+id/hogwarts_background_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="14dp"
@@ -28,13 +28,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
+        android:transitionName="start_inventory"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.11"
-        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintVertical_bias="0.32"
         app:layout_constraintWidth_percent="0.32">
 
         <ImageView
@@ -53,17 +54,32 @@
             android:id="@+id/inventory_text"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/blur"
             android:gravity="center"
             android:text="@string/inventory_headline"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.9"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inventory_activity_picture"
+            app:layout_constraintWidth_percent="0.95" />
+
+        <ImageView
+            android:id="@+id/inventory_activity_picture"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:elevation="-1dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@id/inventory_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.65"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.95" />
+            app:layout_constraintWidth_percent="0.95"
+            app:srcCompat="@drawable/chest" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,9 +87,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
+        android:transitionName="start_duel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.11"
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -96,17 +113,32 @@
             android:id="@+id/duel_text"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/blur"
             android:gravity="center"
             android:text="@string/duelling_headline"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.9"
+            app:layout_constraintHeight_percent="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/duel_activity_picture"
+            app:layout_constraintWidth_percent="0.95" />
+
+        <ImageView
+            android:id="@+id/duel_activity_picture"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:elevation="-1dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@id/duel_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.65"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.95" />
+            app:layout_constraintWidth_percent="0.95"
+            app:srcCompat="@drawable/hogwarts" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -143,15 +175,15 @@
             android:background="@color/blur"
             android:elevation="-1dp"
             android:gravity="center"
-            app:layout_constraintHeight_percent="0.25"
-            app:layout_constraintWidth_percent="0.95"
             android:text="@string/settings_headline"
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.25"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/settings_activity_picture" />
+            app:layout_constraintTop_toBottomOf="@id/settings_activity_picture"
+            app:layout_constraintWidth_percent="0.95" />
 
         <ImageView
             android:id="@+id/settings_activity_picture"
@@ -160,12 +192,12 @@
             android:background="@color/colorAccent"
             android:elevation="-1dp"
             android:scaleType="fitXY"
-            app:layout_constraintHeight_percent="0.65"
-            app:layout_constraintWidth_percent="0.95"
             app:layout_constraintBottom_toTopOf="@id/settings_text"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.65"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.95"
             app:srcCompat="@drawable/corridor2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

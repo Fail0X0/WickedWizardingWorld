@@ -38,7 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
     }
-
+/*
     @Override
     public void onBackPressed() {
         if (D) Log.d(TAG, "Direct back to the HogwartsActivity");
@@ -46,4 +46,5 @@ public class SettingsActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
+    */
 }

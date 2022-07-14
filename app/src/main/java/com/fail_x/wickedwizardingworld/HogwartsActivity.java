@@ -34,11 +34,11 @@ public class HogwartsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hogwarts);
 
-        ImageView duel_activity_button = findViewById(R.id.duel_activity_button);
-        ImageView settings_activity_button = findViewById(R.id.settings_activity_button);
         ImageView user_house = findViewById(R.id.user_house);
-        final ImageView maze_image = findViewById(R.id.maze_image);
-        final ImageView settings_activity_start = findViewById(R.id.settings_activity_button);
+        final ImageView hogwarts_background_image = findViewById(R.id.hogwarts_background_image);
+        final ImageView settings_activity_button = findViewById(R.id.settings_activity_button);
+        final ImageView duel_activity_button = findViewById(R.id.duel_activity_button);
+        final ImageView inventory_activity_button = findViewById(R.id.inventory_activity_button);
         TextView user_name = findViewById(R.id.user_name);
         TextView user_spells = findViewById(R.id.user_spells);
         TextView user_wands = findViewById(R.id.user_wands);
@@ -62,11 +62,9 @@ public class HogwartsActivity extends AppCompatActivity {
             user_house.setImageResource(R.drawable.hufflepuff_icon);
         }
 
-        duel_activity_button.setOnClickListener(v -> OpenDuelActivity());
-
-        settings_activity_button.setOnClickListener(v -> OpenSettingsActivity());
-
-        settings_activity_start.setOnClickListener(v -> OpenImageActivity(settings_activity_start));
+        duel_activity_button.setOnClickListener(v -> OpenDuelActivity(duel_activity_button));
+        settings_activity_button.setOnClickListener(v -> OpenSettingsActivity(settings_activity_button));
+        inventory_activity_button.setOnClickListener(v -> OpenInventoryActivity(inventory_activity_button));
 
         blur.setOnClickListener(v -> {
             blur.setVisibility(View.GONE);
@@ -81,27 +79,28 @@ public class HogwartsActivity extends AppCompatActivity {
         });
     }
 
-    public void OpenImageActivity(ImageView settings_activity_start) {
+    public void OpenSettingsActivity(ImageView settings_activity_start) {
         if (D) Log.d(TAG, "Directing to settings");
         Intent intent = new Intent(this, SettingsActivity.class);
         ActivityOptionsCompat options = ActivityOptionsCompat.
-                makeSceneTransitionAnimation(this, settings_activity_start, "start_duel");
+                makeSceneTransitionAnimation(this, settings_activity_start, "start_settings");
         startActivity(intent, options.toBundle());
-
     }
 
-    public void OpenDuelActivity() {
+    public void OpenDuelActivity(ImageView duel_activity_start) {
         if (D) Log.d(TAG, "Direct to the DuelActivity");
         Intent intent = new Intent(this, DuelActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        ActivityOptionsCompat options = ActivityOptionsCompat.
+                makeSceneTransitionAnimation(this, duel_activity_start, "start_duel");
+        startActivity(intent, options.toBundle());
     }
 
-    public void OpenSettingsActivity() {
-        if (D) Log.d(TAG, "Direct to the DuelActivity");
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    public void OpenInventoryActivity(ImageView duel_activity_start) {
+        if (D) Log.d(TAG, "Direct to the InventoryActivity");
+        Intent intent = new Intent(this, InventoryActivity.class);
+        ActivityOptionsCompat options = ActivityOptionsCompat.
+                makeSceneTransitionAnimation(this, duel_activity_start, "start_inventory");
+        startActivity(intent, options.toBundle());
     }
 
     @Override

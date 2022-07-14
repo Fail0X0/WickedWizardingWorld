@@ -96,6 +96,7 @@ public class DuelActivity extends AppCompatActivity {
 
         }
     }
+    /*
     @Override
     public void onBackPressed() {
         if (D) Log.d(TAG, "Direct back to the HogwartsActivity");
@@ -103,4 +104,5 @@ public class DuelActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
+    */
 }
