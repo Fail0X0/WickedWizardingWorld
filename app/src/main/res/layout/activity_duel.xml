@@ -4,11 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:transitionName="start_image"
     android:outlineSpotShadowColor="@color/black"
-    app:srcCompat="@drawable/background_icon"
     tools:context=".DuelActivity">
 
+    <ImageView
+        android:id="@+id/duel_activity_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="-10dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_icon" />
 
     <ImageView
         android:id="@+id/header_frame"
