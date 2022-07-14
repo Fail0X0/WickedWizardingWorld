@@ -77,25 +77,25 @@ public class HouseChoiceActivity extends AppCompatActivity {
         });
 
         griffindor.setOnClickListener(v -> {
-            User.setHouse(Enemy.House.griffindor);
+            User.setHouse(Character.House.griffindor);
             ani.PressedAnimation(griffindor);
             Toast.makeText(getApplicationContext(), getString(R.string.griffindor), Toast.LENGTH_SHORT).show();
             OpenHogwartsActivity(sorting_hat);
         });
         slytherin.setOnClickListener(v -> {
-            User.setHouse(Enemy.House.slytherin);
+            User.setHouse(Character.House.slytherin);
             ani.PressedAnimation(slytherin);
             Toast.makeText(getApplicationContext(), getString(R.string.slytherin), Toast.LENGTH_SHORT).show();
             OpenHogwartsActivity(sorting_hat);
         });
         hufflepuff.setOnClickListener(v -> {
-            User.setHouse(Enemy.House.hufflepuff);
+            User.setHouse(Character.House.hufflepuff);
             ani.PressedAnimation(hufflepuff);
             Toast.makeText(getApplicationContext(), getString(R.string.hufflepuff), Toast.LENGTH_SHORT).show();
             OpenHogwartsActivity(sorting_hat);
         });
         ravenclaw.setOnClickListener(v -> {
-            User.setHouse(Enemy.House.ravenclaw);
+            User.setHouse(Character.House.ravenclaw);
             ani.PressedAnimation(ravenclaw);
             Toast.makeText(getApplicationContext(), getString(R.string.ravenclaw), Toast.LENGTH_SHORT).show();
             OpenHogwartsActivity(sorting_hat);

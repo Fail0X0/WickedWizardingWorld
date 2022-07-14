@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Enemy {
+public class Enemy extends Character{
     private static final boolean D = true;
     private static final String TAG = Enemy.class.getName();
 
@@ -29,87 +29,6 @@ public class Enemy {
     }
 
     public Enemy() {
-    }
-
-    public int getMana() {
-        return mana;
-    }
-
-    public void setMana(int mana) {
-        this.mana = mana;
-    }
-
-    public float getDamage() {
-        return damage;
-    }
-
-    public void setDamage(float damage) {
-        this.damage = damage;
-    }
-
-    public float getLife() {
-        return life;
-    }
-
-    public void setLife(float life) {
-        this.life = life;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public House getHouse() {
-        return house;
-    }
-
-    public void setHouse(House house) {
-        Enemy.house = house;
-    }
-
-    public List<Spell> getSpell_list() {
-        return spell_list;
-    }
-
-    public void setSpell_list(List<Spell> spell_list) {
-        this.spell_list = spell_list;
-    }
-
-    public void setSpell(Spell spell) {
-        this.spell_list.add(spell);
-    }
-
-    public Spell getSpell(Spell.SpellTag tag) {
-        int i;
-        boolean found = false;
-
-        for (i = 0; i < spell_list.size(); i++) {
-            if (spell_list.get(i).getTag() == tag) {
-                found = true;
-                break;
-            }
-        }
-        if (found)
-            return spell_list.get(i);
-        else {
-            if (D)
-                Log.e(TAG, "Spell could not be found in list. Check writing. getSpell returned NULL!");
-            return null;
-        }
-    }
-
-    public Spell getSpell(int position) {
-        if (position < spell_list.size())
-            return spell_list.get(position);
-        else {
-            if (D)
-                Log.e(TAG, "Spell could not be found in list. Check writing. getSpell returned NULL!");
-            return null;
-        }
     }
 
     public EnemyTag getEnemy_name() {

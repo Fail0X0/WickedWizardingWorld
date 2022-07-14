@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player extends Enemy {
+public class Player extends Character {
     private static final boolean D = true;
     private static final String TAG = Player.class.getName();
 

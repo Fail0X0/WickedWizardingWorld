@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:transitionName="start_image"
     android:outlineSpotShadowColor="@color/black"
+    app:srcCompat="@drawable/background_icon"
     tools:context=".DuelActivity">
 
 
